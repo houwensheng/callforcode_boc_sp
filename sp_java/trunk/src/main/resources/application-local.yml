@@ -1,0 +1,74 @@
+# env Properties active for local:
+server:
+  port: 
+  
+logging:
+  level:
+    ROOT: DEBUG
+
+fabricsdk:
+  constant:
+    chaincodeSource: /home/hou/workspace/go
+    chainCodeName: bocspcc
+    chainCodeVersion: 1.0
+    deployWaitTime: 120000
+    transactionWaitTime: 120000
+    proposalWaitTime: 5000
+    chainCodeLanguage: go
+    
+#spring:
+
+blockchain:
+  #交易用户
+  transUser:
+    name: boc.sp.peer0
+    mspId: BocspMSP
+    privateKeyPath: 
+    certPath: 
+    roleList: 
+      - admin
+      - user
+    affiliation: 
+    account: 
+    
+  channel: 
+    name: bocsp-channel
+    peers:
+      - 
+        name: 
+        endpoint: 
+        pemFile: 
+        #hostnameOverride: admin.org1.example.com
+        sslProvider: openSSL
+        negotiationType: TLS
+      - 
+        name: 
+        endpoint: 
+        pemFile: 
+        #hostnameOverride: peer.org1.example.com
+        sslProvider: openSSL
+        negotiationType: TLS
+    orders:
+      - 
+        name: 
+        endpoint: 
+        clientCertFile: 
+        clientKeyFile: 
+        pemFile: 
+        #hostnameOverride: 
+        sslProvider: openSSL
+        negotiationType: TLS
+  
+    serviceDiscoverPeers:
+      - boc.sp.peer0
+      - boc.sp.peer1
+    queryPeers:
+      - boc.sp.peer1
+      - boc.sp.peer0
+    blockListenerPeers:
+      - boc.sp.peer0
+      - boc.sp.peer1
+    
+
+
+    

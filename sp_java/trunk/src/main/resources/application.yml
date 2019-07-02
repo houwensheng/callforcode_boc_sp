@@ -1,0 +1,21 @@
+#打包时指定profile
+spring:
+  profiles:
+    active: local
+
+swagger:
+  api:
+    title: CALLFORCODE-BOC-SP代码行动星火计划HTTP接口
+    description: 包含从业务系统以HTTP方式发起的签约、信息收集、贷款、捐款使用的接口。
+    version: 1.0
+    
+a:
+  b: c
+
+
+    
+
+
+      
+
+
