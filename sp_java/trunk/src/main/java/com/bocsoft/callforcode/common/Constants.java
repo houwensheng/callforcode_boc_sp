@@ -14,6 +14,8 @@ public class Constants {
 	
 	public static final String LOAN_SERVICE = "loan";
 	
+	public static final String REPAYMENT_SERVICE = "repayment";
+	
 	public static final String SIGN_SERVICE = "sign";
 	
 	public static final String INFORMATION_GATHERING_SERVICE = "infogathering";
