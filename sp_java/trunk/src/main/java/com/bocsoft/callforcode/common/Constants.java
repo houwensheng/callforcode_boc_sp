@@ -6,10 +6,6 @@ public class Constants {
 	
 	public static final String DONATE_BY_CASH = "cash";
 	
-	public static final String DONATE_BY_CREDIT = "credit";
-	
-	public static final String DONATE_CREDIT_LEVERAGE = "10";
-	
 	public static final String DONATE_SERVICE = "donate";
 	
 	public static final String LOAN_SERVICE = "loan";
@@ -30,8 +26,9 @@ public class Constants {
 	//在自有额度之内的，非第一次贷款均使用本编码
 	public static final String LOAN_FOR_THE_OTHER_TIME = "002";
 	
-	//超出自有额度的贷款申请
+	//救灾类贷款
 	public static final String LOAN_FOR_THE_DONATE_TIME = "003";
+	
 	//捐款成功后，奖励捐款额度100分之1的奖励额度
 	public static final String DONATE_BONUS = "100";
 	
@@ -42,6 +39,8 @@ public class Constants {
 	public static final String CHAIN_CODE_LANG_JAVA = "java";
 	
 	public static final String CHAIN_CODE_LANG_NODE = "node";
+
+	
 	
 	
 }

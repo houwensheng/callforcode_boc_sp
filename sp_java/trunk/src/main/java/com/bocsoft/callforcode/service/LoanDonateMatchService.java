@@ -31,7 +31,7 @@ public class LoanDonateMatchService {
 		
 		logger.info("start LoanDonateMatchService...");
 		if(TempStorage.loanPool.compareTo(new BigDecimal("0")) == 0) return;
-		if(TempStorage.creditPool.compareTo(new BigDecimal("0")) == 0) return;
+		if(TempStorage.cashPool.compareTo(new BigDecimal("0")) == 0) return;
 		
 		CustomerVo loanCustomer = null;
 		CustomerVo donateCustomer = null;
@@ -42,7 +42,7 @@ public class LoanDonateMatchService {
 			loanCustomer = tempStorageDao.getCustomerByID(loanID);
 			
 			//如果贷款多于总捐赠
-			if(loanCustomer.getWaitLoan().compareTo(TempStorage.creditPool) == 1) {
+			if(loanCustomer.getWaitLoan().compareTo(TempStorage.cashPool) == 1) {
 				logger.info("LoanDonateMatchService: not sufficient donate.");
 				return;
 			}

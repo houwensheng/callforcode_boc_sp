@@ -27,9 +27,8 @@ public class TempStorageDao {
 		customer.setCreditAmount((new BigDecimal(credit)).subtract(gap));
 	}
 	
-	public void donate(String identityID, BigDecimal donateAmount, BigDecimal donateCredit) {
+	public void donate(String identityID, BigDecimal donateAmount) {
 		TempStorage.waitDonate.add(identityID);
-		TempStorage.creditPool = TempStorage.creditPool.add(donateCredit);
 		TempStorage.cashPool = TempStorage.cashPool.add(donateAmount);
 	}
 	
@@ -43,7 +42,7 @@ public class TempStorageDao {
 		loanCustomer.setWaitLoan(loanCustomer.getWaitLoan().subtract(loanAmount));
 		donateCustomer.setWaitDonate(donateCustomer.getWaitDonate().subtract(loanAmount));
 		
-		TempStorage.creditPool = TempStorage.creditPool.subtract(loanAmount);
+		TempStorage.cashPool = TempStorage.cashPool.subtract(loanAmount);
 		TempStorage.loanPool = TempStorage.loanPool.subtract(loanAmount);
 	}
 	

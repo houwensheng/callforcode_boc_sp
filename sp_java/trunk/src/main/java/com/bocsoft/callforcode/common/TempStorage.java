@@ -14,8 +14,6 @@ public class TempStorage {
 	
 	public static HashMap<String,Object> informations = new HashMap<String,Object>();
 	
-	public static BigDecimal creditPool = new BigDecimal("0");
-	
 	public static BigDecimal cashPool = new BigDecimal("0");
 	
 	public static BigDecimal loanPool = new BigDecimal("0");

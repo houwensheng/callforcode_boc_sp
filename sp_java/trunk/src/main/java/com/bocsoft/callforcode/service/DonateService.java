@@ -20,16 +20,9 @@ public class DonateService implements HTTPService {
 		
 		//客户捐赠的资金
 		BigDecimal donateAmount = new BigDecimal(amount);
-		//客户捐赠的额度
-		BigDecimal donateCredit = new BigDecimal("0");
-		
-		//如果客户捐赠额度，需要付出10%的资金
-		if(Constants.DONATE_BY_CREDIT.equals(sort)) {
-			donateCredit = donateAmount.multiply(new BigDecimal(Constants.DONATE_CREDIT_LEVERAGE));
-		}
 		
 		//TODO 调用核心交易，冻结资金
-		//TODO 进入额度池或资金池，待撮合
+		//进入资金池，待撮合
 		//TODO 记录存入数据库
 		
 		HttpCommonResponse httpCommonResponse = new HttpCommonResponse();
@@ -41,14 +34,9 @@ public class DonateService implements HTTPService {
 		
 		//FOR SHOW
 		CustomerVo customerVo = tempStorageDao.getCustomerByID(identityID);
-		if(customerVo.getCreditAmount().compareTo(donateCredit) == -1) {
-			httpCommonResponse.setReturnCode(Constants.ERROR_RETURN_CODE);
-			httpCommonResponse.setErrMsg("Not sufficient credit amount...");
-			return httpCommonResponse;
-		}
 		
-		tempStorageDao.donate(identityID, donateAmount, donateCredit);
-		customerVo.setWaitDonate(donateCredit);
+		tempStorageDao.donate(identityID, donateAmount);
+		customerVo.setWaitDonate(donateAmount);
 		//FOR SHOW
 		
 
